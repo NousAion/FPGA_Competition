@@ -1,0 +1,11 @@
+# Keep hardware source and constraint files reviewable across platforms.
+*.v text eol=lf
+*.sv text eol=lf
+*.vh text eol=lf
+*.cst text eol=lf
+*.gprj text eol=lf
+*.md text eol=lf
+
+# Generated FPGA bitstreams are not stored in Git.
+*.bin binary
+*.fs binary

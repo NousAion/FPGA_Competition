@@ -1,0 +1,36 @@
+# Gowin generated implementation output
+impl/
+sim_work/
+*.gwf
+*.log
+*.rpt
+*.fs
+*.bin
+*.binx
+*.db
+*.p
+*.pr
+*.tr
+*.timing_paths
+
+# Simulation and tool transcripts
+transcript
+sim_work/
+*.vcd
+*.wlf
+*.vvp
+
+# Gowin per-user state
+*.gprj.user
+*.gprj.bak
+*.bak
+
+# Editor/OS files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+
+# Keep source-facing directories even when empty
+!.gitkeep
