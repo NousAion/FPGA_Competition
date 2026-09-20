@@ -2,7 +2,7 @@
 
 ## 1. 分析范围与资料结论
 
-本分析基于 `D:/qqdownload/FPFG_COMPETITION` 中的高云 2026 FPGA 赛道选题指南、FPGA2026 赛题解读资料、Sipeed Tang 系列资料及当前 Gowin 工程文件。当前工程目标器件已切换为 **Tang Mega 138K 普通 PG484 SOM**，暂按 `GW5AST-138B / GW5AST-LV138PG484AC1/I0` 配置；收到实物后需根据 SOM 丝印确认 B/C 版本。现有 RTL 仍只有一个 `mux_2` 组合逻辑例程，尚未实现赛题功能。
+本分析基于 `D:/qqdownload/FPFG_COMPETITION` 中的高云 2026 FPGA 赛道选题指南、FPGA2026 赛题解读资料、Sipeed Tang 系列资料及当前 Gowin 工程文件。当前工程目标器件为已确认的 **Tang Mega 138K C 版普通 PG484 SOM**：`GW5AST-138C / GW5AST-LV138PG484AC1/I0`。现有 RTL 仍只有一个 `mux_2` 组合逻辑例程，尚未实现赛题功能。
 
 赛题核心是：用 FPGA HDL 完成从演奏交互采集到 I2S 音频输出的纯硬件实时合成链路。音频不能依赖软核、MCU、上位机或预录 PCM；输出必须由实时控制量逐样本、逐声部生成。
 
@@ -130,7 +130,7 @@
 
 ## 6. 当前工程审计
 
-- 已配置器件：GW5AST-138B / GW5AST-LV138PG484AC1/I0（普通 PG484，B/C 版本需按实物确认）。
+- 已配置器件：GW5AST-138C / GW5AST-LV138PG484AC1/I0（普通 PG484，已按实物确认）。
 - 已有源文件：`src/mux_2.v`、`src/FPGA_competition.cst`。
 - 已有仿真：`sim_tb/mux2_tb.v`，属于例程级组合逻辑测试。
 - 当前综合报告只使用 1 个 LUT、0 个寄存器、无时钟资源，说明工程尚未进入音频实现阶段。
@@ -146,7 +146,7 @@
 
 ## 8. 主要风险与待确认项
 
-1. 需要确认实物是普通 Tang Mega 138K PG484，而不是 138K Pro FPG676；并确认 B/C 芯片版本及对应 Gowin Part Number。
+1. 已确认实物为普通 Tang Mega 138K PG484、C 版；后续新增 IP 必须针对该器件重新生成。
 2. 需要确认板上 DAC/Codec 型号、I2S 主从关系、MCLK 要求和模拟音频输出路径；官方例程的音频引脚只能作为起点。
 3. 需要确认交互传感器方案。为了降低周期风险，建议首版采用按键/电容触摸 + 压力或电位器两维方案，再增加滑音/颤音作为第 3 维。
 4. 138K 资源足以支撑主线扩展，但 DDR3 不作为首版依赖；短延迟优先使用片上 BSRAM，避免引入 DDR 控制器时序风险。

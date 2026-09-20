@@ -35,7 +35,7 @@
 
 1. 例程工程写的是旧的 `GW5AST-LV138PG484AC2/I1` / `gw5ast138b-010`；当前本机 Gowin IDE 可用的普通 PG484 器件是 `GW5AST-LV138PG484AC1/I0`，B/C 对应 ID 也不同。
 2. 例程的 `.gprj` 引用了 `src/gowin_rpll/gowin_rpll.v`，但下载内容中没有该文件，说明它不是当前工程的完整、可复现基线。
-3. 例程中的 PLL/OSC/CLKDIV 是器件相关生成物。拿到实际 SOM 并确认 B/C 后，应在当前 IDE 中重新生成，不能把旧 IP 当作通用 Verilog 使用。
+3. 例程中的 PLL/OSC/CLKDIV 是器件相关生成物。实际 SOM 已确认是 C 版，应在当前 IDE 中针对 C 版重新生成，不能把旧 IP 当作通用 Verilog 使用。
 4. 例程使用历史音频示例复位脚 `rst=F4`；当前项目参考的是 138K Dock 的 `sys_rst_n=AA13`。两者不能同时接入正式顶层。
 5. `PA_EN` 为低有效：`0` 开功放，`1` 关闭/静音。
 

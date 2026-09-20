@@ -2,7 +2,7 @@
 // Sources: Sipeed TangMega-138K-example/audio_i2s/eda_proj/audio.cst and
 // the official tang_mega_138K_pins.cst board pin file.
 // Reference only: this file is not included by FPGA_competition.gprj yet.
-// Confirm the SOM revision (GW5AST-138B/C) and top-level port names before use.
+// Target SOM revision is GW5AST-138C. Confirm top-level port names before use.
 // The active ports below are the minimum audio smoke-test set. Do not add
 // legacy example ports (such as rst=F4 or led=W21) to the production top.
 

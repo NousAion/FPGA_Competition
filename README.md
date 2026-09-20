@@ -2,9 +2,8 @@
 
 基于 FPGA 的实时多音色合成电子乐器引擎。
 
-当前目标平台为 **Tang Mega 138K（普通 PG484 SOM）+ Tang Mega 138K Dock（NEO Dock 系列底板）**，工程器件暂按本机 Gowin IDE
-可用的 `GW5AST-138B / GW5AST-LV138PG484AC1/I0` 配置。收到实物后必须以 SOM 丝印和官方约束文件确认
-是 B 版还是 C 版；138K Pro（FPG676A）不属于当前目标。
+当前目标平台为 **Tang Mega 138K（普通 PG484 SOM）+ Tang Mega 138K Dock（NEO Dock 系列底板）**。已确认 SOM 为 C 版，
+工程器件固定为 `GW5AST-138C / GW5AST-LV138PG484AC1/I0`；138K Pro（FPG676A）不属于当前目标。
 
 项目目标分层如下：
 
