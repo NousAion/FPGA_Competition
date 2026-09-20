@@ -1,0 +1,34 @@
+// Tang Mega 138K + Tang Mega 138K Dock (NEO Dock family) audio reference constraints.
+// Sources: Sipeed TangMega-138K-example/audio_i2s/eda_proj/audio.cst and
+// the official tang_mega_138K_pins.cst board pin file.
+// Reference only: this file is not included by FPGA_competition.gprj yet.
+// Confirm the SOM revision (GW5AST-138B/C) and top-level port names before use.
+
+IO_LOC "sys_clk" V22;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+// Use either the Dock reset below or the audio example's SOM reset, not both.
+IO_LOC "sys_rst_n" AA13;
+IO_PORT "sys_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+IO_LOC "led" W21;
+IO_PORT "led" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "rst" F4;
+IO_PORT "rst" IO_TYPE=LVCMOS15 PULL_MODE=NONE BANK_VCCIO=1.5;
+
+IO_LOC "PA_EN" AB16;
+IO_PORT "PA_EN" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "HP_DIN" AA16;
+IO_PORT "HP_DIN" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "HP_WS" AB17;
+IO_PORT "HP_WS" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+IO_LOC "HP_BCK" Y17;
+IO_PORT "HP_BCK" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
+
+// Optional NEO Dock controls from the official 138K pin file:
+// Key_in[0]=AB13, Key_in[1]=Y12, WS2812=J16.
+// LEDs[0..7]=T18,R18,R17,P16,U21,T21,R19,P19.
