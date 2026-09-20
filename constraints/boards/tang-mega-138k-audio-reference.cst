@@ -3,20 +3,17 @@
 // the official tang_mega_138K_pins.cst board pin file.
 // Reference only: this file is not included by FPGA_competition.gprj yet.
 // Confirm the SOM revision (GW5AST-138B/C) and top-level port names before use.
+// The active ports below are the minimum audio smoke-test set. Do not add
+// legacy example ports (such as rst=F4 or led=W21) to the production top.
 
 IO_LOC "sys_clk" V22;
 IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
 
-// Use either the Dock reset below or the audio example's SOM reset, not both.
+// NEO Dock/system reset from the current official 138K pin file.
 IO_LOC "sys_rst_n" AA13;
 IO_PORT "sys_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
 
-IO_LOC "led" W21;
-IO_PORT "led" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
-
-IO_LOC "rst" F4;
-IO_PORT "rst" IO_TYPE=LVCMOS15 PULL_MODE=NONE BANK_VCCIO=1.5;
-
+// Power amplifier enable is active-low on the NEO Dock (PA_EN=0 enables amp).
 IO_LOC "PA_EN" AB16;
 IO_PORT "PA_EN" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
 
@@ -29,6 +26,10 @@ IO_PORT "HP_WS" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
 IO_LOC "HP_BCK" Y17;
 IO_PORT "HP_BCK" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
 
-// Optional NEO Dock controls from the official 138K pin file:
+// Optional NEO Dock controls from the official 138K pin file. Add these only
+// after the corresponding top-level ports and active polarity are documented:
 // Key_in[0]=AB13, Key_in[1]=Y12, WS2812=J16.
 // LEDs[0..7]=T18,R18,R17,P16,U21,T21,R19,P19.
+
+// Historical Sipeed audio_i2s example ports (reference only, not active):
+// led=W21; rst=F4. The old rst pin must not be combined with sys_rst_n.
