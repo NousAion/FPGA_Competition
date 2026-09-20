@@ -15,6 +15,7 @@ IO_PORT "sys_rst_n" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
 
 // Power amplifier enable is active-low on the NEO Dock (PA_EN=0 enables amp).
 IO_LOC "PA_EN" AB16;
+// Active-low amplifier enable: 0=enabled, 1=muted/off.
 IO_PORT "PA_EN" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=8 BANK_VCCIO=3.3;
 
 IO_LOC "HP_DIN" AA16;
