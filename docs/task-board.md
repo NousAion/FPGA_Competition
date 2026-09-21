@@ -2,15 +2,17 @@
 
 目标：在 Tang Mega 138K C 版到货前，完成可仿真的音频积木；到货后先验证固定测试音，再逐步接入交互。
 
+接口冻结见 [interfaces-v0.md](interfaces-v0.md)。三个任务使用不同文件，集成时按冻结接口连接。
+
 ## 第一轮任务
 
 每项任务只能修改自己列出的文件。提交必须包含 RTL、testbench 和仿真结论。负责人可以轮换，不按“主开发/杂务”分层。
 
 | 任务 | 允许修改 | 完成条件 | 依赖 |
 |---|---|---|---|
-| T-001 相位累加器 | `rtl/audio/phase_accumulator.v`、`tb/phase_accumulator_tb.v` | 复位、sample enable、步长变化、自然回绕均通过仿真 | 无 |
-| T-002 ADSR 包络 | `rtl/audio/adsr_envelope.v`、`tb/adsr_envelope_tb.v` | attack/decay/sustain/release 状态可观察且可重复 | 无 |
-| T-003 混音限幅 | `rtl/audio/mixer_saturator.v`、`tb/mixer_saturator_tb.v` | 普通相加、正溢出、负溢出通过仿真 | 无 |
+| T-001 相位累加器 | `rtl/audio/phase_accumulator.v`、`tb/phase_accumulator_tb.v` | 严格遵守接口 v0；复位、sample enable、步长变化、自然回绕均通过仿真 | 无 |
+| T-002 ADSR 包络 | `rtl/audio/adsr_envelope.v`、`tb/adsr_envelope_tb.v` | 严格遵守接口 v0；attack/decay/sustain/release 状态可观察且可重复 | 无 |
+| T-003 混音限幅 | `rtl/audio/mixer_saturator.v`、`tb/mixer_saturator_tb.v` | 严格遵守接口 v0；普通相加、正溢出、负溢出通过仿真 | 无 |
 
 三项完成后才做集成，集成任务另开提交，避免三个人同时修改顶层。
 
