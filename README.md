@@ -13,7 +13,8 @@
 - 风险兜底：若进度受限，至少保证扩展 1 或扩展 2 中一项完整、可现场验证。
 
 项目分析、链路和模块规划见 [docs/project-analysis.md](docs/project-analysis.md)，目标验收矩阵见
-[docs/requirements-traceability.md](docs/requirements-traceability.md)。
+[docs/requirements-traceability.md](docs/requirements-traceability.md)。三人协作总控规则见
+[docs/collaboration-master.md](docs/collaboration-master.md)。
 
 ## 目录
 

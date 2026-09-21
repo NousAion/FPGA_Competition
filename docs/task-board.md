@@ -3,6 +3,7 @@
 目标：在 Tang Mega 138K C 版到货前，完成可仿真的音频积木；到货后先验证固定测试音，再逐步接入交互。
 
 接口冻结见 [interfaces-v0.md](interfaces-v0.md)。三个任务使用不同文件，集成时按冻结接口连接。
+三人认领、AI 提示词、修改边界和交接规则见 [collaboration-master.md](collaboration-master.md)。
 
 ## 第一轮任务
 
